@@ -1,0 +1,19 @@
+Opts
+23 May 2019
+Tags: go, golang
+
+Jaime Pillora
+Software Engineer
+http://jpillora.com
+dev@jpillora.com
+
+* Title of slide or section (must have asterisk)
+
+Some Text
+
+.image small.png
+
+.code hello.go HLxxx
+
+: Presenter notes (first paragraph)
+: Presenter notes (subsequent paragraph(s))
