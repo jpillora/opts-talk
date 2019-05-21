@@ -1,0 +1,7 @@
+Usage of /var/folders/jz/693n1q554tngy6n6d4hznz440000gn/T/go-build231959660/b001/exe/main:
+  -auth string
+    	enable http basic-auth (user:pass)
+  -log
+    	enable http request logging
+  -port int
+    	http listening port (default 3000)

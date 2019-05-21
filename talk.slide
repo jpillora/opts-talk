@@ -1,19 +1,51 @@
-Opts
+#==============================================
+
+Writing frictionless command-line interfaces in Go
 23 May 2019
 Tags: go, golang
 
 Jaime Pillora
 Software Engineer
-http://jpillora.com
+https://jpillora.com
 dev@jpillora.com
 
-* Title of slide or section (must have asterisk)
+#==============================================
 
-Some Text
+*  Go is powerful, simple and predictable and our command-line interfaces should be the same
 
-.image small.png
+#==============================================
 
-.code hello.go HLxxx
+* Let’s make a web server
 
-: Presenter notes (first paragraph)
-: Presenter notes (subsequent paragraph(s))
+main.go
+
+.code doc/step1/main.go /^func main/,/^}/
+
+server/server.go
+
+.code doc/step1/server/server.go /package/
+.code doc/step1/server/server.go /^type Server/
+.code doc/step1/server/server.go /^func New/,/^}/
+
+#==============================================
+
+* And make it configurable
+
+main.go
+
+.code doc/step2/main.go /^func main/,/^}/
+
+server/server.go
+
+.code doc/step2/server/server.go /^type Config/,/^}/
+.code doc/step2/server/server.go /^func New/,/^}/
+
+#==============================================
+
+* And add a command-line interface
+
+.code doc/step3/main.go /^func main/,/^}/
+
+  go run main --help
+
+.code doc/step3/help.txt
