@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/jpillora/opts-talk/step1/server"
+	"github.com/jpillora/opts-talk/present/files/step1/server"
 )
 
 func main() {

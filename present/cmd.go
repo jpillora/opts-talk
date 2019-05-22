@@ -1,17 +1,43 @@
 package present
 
-import "github.com/jpillora/opts"
+import (
+	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/jpillora/opts"
+	"github.com/jpillora/present/handler"
+	"github.com/jpillora/requestlog"
+)
 
 type Command struct {
-	Foo int
+	Host string `opts:"help=listening interface"`
+	Port int    `opts:"help=listening port, env"`
+	handler.Config
 }
 
 func New() opts.Opts {
-	return opts.New(&Command{
-		Foo: 42,
-	})
+	cmd := Command{
+		Host: "localhost",
+		Port: 3000,
+		Config: handler.Config{
+			ContentPath: "present",
+		},
+	}
+	return opts.New(&cmd).
+		Summary("runs an http server hosting the target presentation")
 }
 
 func (c *Command) Run() error {
-	return nil
+	addr := fmt.Sprintf("%s:%d", c.Host, c.Port)
+	//prepare present handler
+	h, err := handler.New(c.Config)
+	if err != nil {
+		return err
+	}
+	//add http request logging
+	h = requestlog.Wrap(h)
+	//listen!
+	log.Printf("listening at %s...", addr)
+	return http.ListenAndServe(addr, h)
 }

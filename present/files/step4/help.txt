@@ -1,0 +1,9 @@
+
+  Usage: server [options]
+
+  Options:
+  --port, -p  listening port (default 3000, env PORT)
+  --log, -l   enable request logging
+  --auth, -a  enable basic-auth (user:pass)
+  --help, -h  display help
+
