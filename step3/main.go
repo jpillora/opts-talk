@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/jpillora/opts-talk/present/files/step3/server"
+	"github.com/jpillora/opts-talk/step3/server"
 )
 
 func main() {

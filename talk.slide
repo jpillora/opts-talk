@@ -24,13 +24,13 @@ dev@jpillora.com
 
 main.go
 
-.code files/step1/main.go /^func main/,/^}/
+.code step1/main.go /^func main/,/^}/
 
 server/server.go
 
-.code files/step1/server/server.go /package/
-.code files/step1/server/server.go /^type Server/
-.code files/step1/server/server.go /^func New/,/^}/
+.code step1/server/server.go /package/
+.code step1/server/server.go /^type Server/
+.code step1/server/server.go /^func New/,/^}/
 
 
 : So, let’s make a web server
@@ -44,12 +44,12 @@ server/server.go
 
 main.go
 
-.code files/step2/main.go /^func main/,/^}/
+.code step2/main.go /^func main/,/^}/
 
 server/server.go
 
-.code files/step2/server/server.go /^type Config/,/^}/
-.code files/step2/server/server.go /^func New/,/^}/
+.code step2/server/server.go /^type Config/,/^}/
+.code step2/server/server.go /^func New/,/^}/
 
 : Nearly every program we write has configuration.
 : We might be able to get by with hard-coded values for a while, but eventually, we need some form of external configuration.
@@ -61,11 +61,11 @@ server/server.go
 
 main.go
 
-.code files/step3/main.go /^func main/,/^}/
+.code step3/main.go /^func main/,/^}/
 
 server/server.go
 
-.code files/step3/server/server.go /^type Config/,/^}/
+.code step3/server/server.go /^type Config/,/^}/
 
 : At this point, we could use the standard library “flag” package, like this, and set the address of each field.
 : But, we can see we’re repeating ourselves by describing our config struct again.
@@ -77,11 +77,11 @@ server/server.go
 
 main.go
 
-.code files/step4/main.go /^func main/,/^}/
+.code step4/main.go /^func main/,/^}/
 
 server/server.go
 
-.code files/step4/server/server.go /^type Config/,/^}/
+.code step4/server/server.go /^type Config/,/^}/
 
 : This code implements the same logic as the last slide, though we can see that all the config addressing is gone, and our CLI “logic” now lives in Config.
 : And there’s a sneaky env=PORT in there as well. This tells opts to use the PORT variable when the flag isn’t defined. If it’s undefined too then it will use the default.
@@ -92,11 +92,11 @@ server/server.go
 
 Before
 
-.code files/step3/help.txt
+.code step3/help.txt
 
 After
 
-.code files/step4/help.txt
+.code step4/help.txt
 
 : Here we can see similar help outputs
 : And that opts is neater, though more importantly, you cannot make any changes at all to the package flag output, whereas opts is completely customisable.
@@ -121,13 +121,12 @@ After
 : You'll probably realise that other packages out there have similar feature lists.
 : The biggest difference is the last point, opts allows you uplift your existing structs into commands and subcommands with minimal effort
 
-
 #==============================================
 
 * Subcommands and shell-completions
 
 Demo
 
-.image files/vscode.png
+.image vscode.png
 
 : Speaking of subcommands, lets get into a demo

@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/jpillora/opts-talk/present/files/step5/cert"
-	"github.com/jpillora/opts-talk/present/files/step5/server"
+	"github.com/jpillora/opts-talk/step5/cert"
+	"github.com/jpillora/opts-talk/step5/server"
 )
 
 func main() {
