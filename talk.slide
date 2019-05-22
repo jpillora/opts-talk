@@ -8,6 +8,9 @@ Software Engineer
 https://jpillora.com
 dev@jpillora.com
 
+https://github.com/jpillora/opts
+Find out more here
+
 : Test note
 
 #==============================================
@@ -106,11 +109,11 @@ After
 * Why opts?
 
 - Promotes better code separation
-- Automatically generated and highly customisable --help text
+- Automatically generated and highly customisable help text
 - Default values by intitialising the struct
 - Default values from a JSON config file
-- Default values from environment
-- Group your flags in the help output
+- Default values from the environment
+- Group sets of flags in the help text
 - Sub-commands by providing child Opts or nesting structs
 - Infers program name command names from struct or package name
 - Define custom flags types via opts.Setter or flag.Value
@@ -118,7 +121,7 @@ After
 - Easy to use with minimal boilerplate
 
 : So why use opts? Well here's a few reasons.
-: You'll probably realise that other packages out there have similar feature lists.
+: You might have realised that other packages out there have similar feature lists.
 : The biggest difference is the last point, opts allows you uplift your existing structs into commands and subcommands with minimal effort
 
 #==============================================
@@ -130,3 +133,5 @@ Demo
 .image vscode.png
 
 : Speaking of subcommands, lets get into a demo
+: VSCode -> golang-syd/
+: TLS flags -> subcommands "cert gen/inspect"
