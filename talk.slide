@@ -11,13 +11,22 @@ dev@jpillora.com
 https://github.com/jpillora/opts
 Find out more here
 
+https://github.com/jpillora/opts-talk
+Find the talk slides here
+
+https://github.com/jpillora/present
+Find my forked version of the Go present tool
+
 : Test note
 
 #==============================================
 
 *  Go is powerful, simple and predictable and our command-line interfaces should be the same
 
-: Go is awesome. I’ve spent a lot of time writing command-line interfaces. When I started writing CLIs, the Go ecosystem didn’t have any CLI packages that met my needs. They were either too complicated, too strange or had too much boilerplate.
+: Go is awesome.
+: I’ve spent a lot of time writing command-line interfaces.
+: When I started writing CLIs, the ecosystem didn’t have any packages that met my needs.
+: They were either too complicated, too strange or had too much boilerplate.
 : So, I decided to write my own
 : Let’s start with the canonical Go example, a webserver
 
@@ -32,12 +41,9 @@ main.go
 server/server.go
 
 .code step1/server/server.go /package/
-.code step1/server/server.go /^type Server/
-.code step1/server/server.go /^func New/,/^}/
-
+.code step1/server/server.go /^func New/,/Run/
 
 : So, let’s make a web server
-: By definition main packages are not reusable, and so I like to keep my main packages as small as possible, and split my logic into other sub packages.
 : Here we can see our main function
 : And we're instantiating our Server “class” and then we're running it.
 
@@ -93,16 +99,17 @@ server/server.go
 
 * Improved help text
 
-Before
+pkg/flag
 
 .code step3/help.txt
 
-After
+jpillora/opts
 
 .code step4/help.txt
 
 : Here we can see similar help outputs
-: And that opts is neater, though more importantly, you cannot make any changes at all to the package flag output, whereas opts is completely customisable.
+: And that opts is neater, though more importantly, opts is completely customisable
+: whereas you cannot make any changes at all to the package flag output.
 
 #==============================================
 
@@ -121,7 +128,7 @@ After
 - Easy to use with minimal boilerplate
 
 : So why use opts? Well here's a few reasons.
-: You might have realised that other packages out there have similar feature lists.
+: There are a lot of other great packages out there today with similar feature lists.
 : The biggest difference is the last point, opts allows you uplift your existing structs into commands and subcommands with minimal effort
 
 #==============================================
@@ -130,7 +137,7 @@ After
 
 Demo
 
-.image vscode.png
+.image misc/vscode.png
 
 : Speaking of subcommands, lets get into a demo
 : VSCode -> golang-syd/

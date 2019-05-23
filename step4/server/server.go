@@ -17,12 +17,12 @@ type Config struct {
 	Auth string `opts:"help=enable basic-auth (user:pass)"`
 }
 
-func New(c Config) *Server {
-	return &Server{Config: c}
-}
-
 type Server struct {
 	Config
+}
+
+func New(c Config) *Server {
+	return &Server{Config: c}
 }
 
 func (s *Server) hello(w http.ResponseWriter, r *http.Request) {

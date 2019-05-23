@@ -7,4 +7,5 @@ import (
 func main() {
 	c := server.Config{Port: 3000}
 	s := server.New(c)
+	s.Run()
 }

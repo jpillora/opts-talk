@@ -11,12 +11,12 @@ type Config struct {
 	Auth string
 }
 
-func New(c Config) *Server {
-	return &Server{Config: c}
-}
-
 type Server struct {
 	Config
+}
+
+func New(c Config) *Server {
+	return &Server{Config: c}
 }
 
 func (s *Server) Run() error {

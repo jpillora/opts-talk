@@ -6,4 +6,5 @@ import (
 
 func main() {
 	s := server.New()
+	s.Run()
 }

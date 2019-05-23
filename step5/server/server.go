@@ -27,20 +27,11 @@ func New() opts.Opts {
 	})
 }
 
-func (c command) Run() error {
-	s := &server{command: c}
-	return s.Run()
-}
-
-type server struct {
-	command
-}
-
-func (s *server) hello(w http.ResponseWriter, r *http.Request) {
+func (s *command) hello(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("hello world!\n"))
 }
 
-func (s *server) Run() error {
+func (s *command) Run() error {
 	//router
 	m := http.NewServeMux()
 	m.HandleFunc("/", s.hello)
