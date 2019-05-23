@@ -45,7 +45,6 @@ server/server.go
 
 : So, let’s make a web server
 : Here we can see our main function
-: And we're instantiating our Server “class” and then we're running it.
 
 #==============================================
 
@@ -76,6 +75,7 @@ server/server.go
 
 .code step3/server/server.go /^type Config/,/^}/
 
+: Now we want to adjust our config from the terminal, so we need to add a command-line interface.
 : At this point, we could use the standard library “flag” package, like this, and set the address of each field.
 : But, we can see we’re repeating ourselves by describing our config struct again.
 : Let’s try this again, except using opts.
